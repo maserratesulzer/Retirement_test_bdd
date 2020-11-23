@@ -5,7 +5,7 @@ EXTRA_TYPES = {'Number': int, 'String': str}
 CONVERTERS = {'birth_year': int, 'years_old': int, 'months_old': int}
 
 
-@scenario("retirement.feature", "The user enters a valid birth month", example_converters=CONVERTERS, features_base_dir="../features")
+@scenario("retirement.feature", "user will input a valid birth month", example_converters=CONVERTERS, features_base_dir="../features")
 def test_add():
     pass
 
