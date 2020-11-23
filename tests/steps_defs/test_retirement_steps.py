@@ -1,24 +1,20 @@
-import pytest
-from pytest_bdd import scenarios, given, when, then
-from retirement import _validate_age_month
+from pytest_bdd import scenario, given, when, then, parsers
+from RetirementAge import retirement
+
+EXTRA_TYPES = {'Number': int, 'String': str}
+CONVERTERS = {'birth_year': int, 'years_old': int, 'months_old': int}
 
 
-@scenarios('../features/retirement.feature', 'simple Month validation for retirement age program')
+@scenario("retirement.feature", "The user enters a valid birth month", example_converters=CONVERTERS, features_base_dir="../features")
 def test_add():
     pass
 
 
-@given("a month for a retirement age calculation")
-def step_month():
-    # raise NotImplementedError(u'STEP: Given a month for a retirement age calculation')
-    return 12
+@given("the birth year")
+def calc(year):
+    return retirement(year)
 
 
-@when("the month value is entered Then the program checks if the value is a valid month between 1 and 12")
-def step_impl(month):
-    return _validate_age_month(month)
-
-
-@then("the program checks if the value is a valid month between 1 and 12")
-def step_impl2(x):
-    assert x == 12
+@then("the user's retirement age will be the variables years_old, and months_old")
+def validate(calc, years, months):
+    assert calc == (years, months)
