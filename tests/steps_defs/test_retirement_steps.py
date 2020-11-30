@@ -11,10 +11,10 @@ def test_add():
 
 
 @given("the birth year")
-def calc(year):
-    return retirement(year)
+def calc(birth_year):
+    return retirement(birth_year)
 
 
 @then("the user's retirement age will be the variables years_old, and months_old")
-def validate(calc, years, months):
-    assert calc == (years, months)
+def validate(calc, years_old, months_old):
+    assert calc == (years_old, months_old)
