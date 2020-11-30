@@ -16,5 +16,5 @@ def calc(birth_year,months_old):
 
 
 @then("the user's retirement age will be the variables years_old, and months_old")
-def validate(calc, years_old, months_old):
-    assert calc == (years_old, months_old)
+def validate( years_old, months_old):
+    assert calc(birth_year,months_old) == ("Your full retirement age is ", age," and ",month," months")
