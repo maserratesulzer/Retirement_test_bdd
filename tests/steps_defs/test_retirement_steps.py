@@ -11,7 +11,7 @@ def test_add():
 
 
 @given("the birth year")
-def calc(birth_year):
+def calc(birth_year,months_old):
     return retirement(birth_year,months_old)
 
 
