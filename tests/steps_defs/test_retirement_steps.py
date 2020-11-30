@@ -12,7 +12,7 @@ def test_add():
 
 @given("the birth year")
 def calc(birth_year):
-    return retirement(birth_year)
+    return retirement(birth_year,months_old)
 
 
 @then("the user's retirement age will be the variables years_old, and months_old")
