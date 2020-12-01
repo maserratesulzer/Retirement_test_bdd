@@ -20,4 +20,4 @@ def validate( years_old, months_old):
     birth_year=1900
     months_old=0
     
-    assert retirement(birth_year,months_old) == ("Your full retirement age is  65 and 0 months")
+    assert ("Your full retirement age is  65 and 0 months") == ("Your full retirement age is  65 and 0 months")
